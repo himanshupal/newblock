@@ -3,17 +3,26 @@ import useDatabase from "./database";
 import { createHash } from "crypto";
 
 export interface IBlock {
+	/** Transaction or ID of transaction if reading from database */
 	transaction: Transaction;
+	/** Hash of previous block to be used in next block */
 	prevHash: string;
+	/** Timestamp of block creation */
 	timestamp: number;
+	/** Unique nonce, equal to user txn count in real blockchain */
 	nonce: number;
+	/** A new random block hash */
 	hash: string;
 }
 
 export interface ITransaction {
+	/** Sender address */
 	fromAddress: string;
+	/** Receiver address */
 	toAddress: string;
+	/** Amount to be sent */
 	amount: number;
+	/** A new random hash */
 	hash: string;
 }
 
@@ -93,7 +102,7 @@ export class Block implements IBlock {
  * Blockchain represents a chain of blocks, with methods for adding blocks
  * and checking the integrity of the chain.
  */
-class Blockchain {
+abstract class Blockchain {
 	/**
 	 * Create the initial block for the blockchain.
 	 */
