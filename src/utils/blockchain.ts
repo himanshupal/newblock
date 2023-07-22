@@ -118,8 +118,8 @@ class Blockchain {
 	 * Get the latest block in the chain.
 	 */
 	public static async latestBlock() {
-		const chainData = await this.history();
-		return chainData.at(-1);
+		const [recentBlock] = await this.history();
+		return recentBlock;
 	}
 
 	/**
@@ -145,6 +145,7 @@ class Blockchain {
 
 	/**
 	 * Get current status of blockchain
+	 * Sorted in latest-to-last order
 	 * @returns All previous transaction blocks
 	 */
 	public static async history() {
