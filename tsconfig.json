@@ -9,7 +9,7 @@
     "allowJs": false,
     "strict": false,
     "outDir": "dist",
-    "target": "ES5",
+    "target": "ES2015",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
