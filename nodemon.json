@@ -1,0 +1,8 @@
+{
+  "verbose": false,
+  "ext": "ts,js,json",
+  "watch": ["src/**/*"],
+  "execMap": {
+    "ts": "node -r @swc-node/register"
+  }
+}
